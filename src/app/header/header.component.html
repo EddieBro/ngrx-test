@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <nav class="header-menu">
+    <ul>
+      <li><a href="">Main</a></li>
+      <li><a routerLink="users">Users</a></li>
+      <li><a href="">About</a></li>
+    </ul>
+  </nav>
+  <button color="primary" mat-raised-button [matMenuTriggerFor]="menu">Page1</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  <button color="accent" mat-raised-button [matMenuTriggerFor]="menu">Page1</button>
+</div>
