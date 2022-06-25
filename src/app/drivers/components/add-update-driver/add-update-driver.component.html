@@ -1,0 +1,28 @@
+<form [formGroup]="fg" (ngSubmit)="submit()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Driver name</mat-label>
+    <input matInput placeholder="John " value="" formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Driver surname</mat-label>
+    <input matInput placeholder="Doe" value="" formControlName="surname">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" placeholder="example@example.com" value="" formControlName="email">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthDate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div>
+    <mat-label>Driver status:</mat-label>
+    <mat-checkbox formControlName="active">Active</mat-checkbox>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+</form>

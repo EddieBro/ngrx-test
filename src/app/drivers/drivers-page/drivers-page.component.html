@@ -1,0 +1,24 @@
+<div class="wrap">
+  <app-add-update-driver></app-add-update-driver>
+  <div class="cards-list">
+    <mat-card class="driver-card" *ngFor="let driver of drivers$ | async; trackBy: trackById">
+      <mat-card-header>
+        <mat-card-title>{{driver.name}} {{driver.surname}}</mat-card-title>
+        <mat-card-subtitle>Birth Date: {{driver.birthDate | date: 'dd.MM.yyyy'}}</mat-card-subtitle>
+        <mat-card-subtitle>email: <a href="mailto:{{driver.email}}">{{driver.email}}</a></mat-card-subtitle>
+        <mat-card-title><div class="status-block" [ngClass]="{'active' : driver.active, 'unactive': !driver.active}">
+          {{driver.active ? 'Active' : 'Unactive'}}
+        </div></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <button mat-mini-fab color="primary" aria-label="Delete Driver">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" aria-label="Delete Driver" (click)="deleteDriver(driver.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

@@ -1,0 +1,42 @@
+
+.wrap {
+  padding: 16px;
+}
+
+.cards-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(5,  minmax(100px, 1fr));
+}
+
+.driver-card {
+  border-radius: 8px;
+  border: 1px solid rgba(gray, 20%);
+}
+
+.status-block {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  background-color: #00c400;
+  &.unactive {
+    background-color: rgb(206, 0, 0);
+  }
+}
+
+mat-card-subtitle {
+  display: flex;
+}
+
+mat-card-header ::ng-deep .mat-card-header-text {
+  margin: 0;
+}
+
+button {
+  margin-right: 15px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

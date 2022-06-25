@@ -1,16 +1,21 @@
 @use '@angular/material' as mat;
-
 @include mat.core();
+$my-palette: mat.define-palette(mat.$indigo-palette);
+$primary: mat.define-palette(mat.$indigo-palette, 500);
 
-$my-primary: mat.define-palette(mat.$indigo-palette, 500);
-$my-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
 
-$my-theme: mat.define-light-theme((
-  color: (
-    primary: $my-primary,
-    accent: $my-accent,
-  )
-));
-
-@include mat.all-component-themes($my-theme);
-@include mat.strong-focus-indicators-theme($my-theme);
+.header-menu {
+  padding: 16px;
+  display: flex;
+  gap: 0 15px;
+  font-size: 18px;
+  background-color: mat.get-color-from-palette($primary);
+  a {
+    color: mat.get-color-from-palette($my-palette, '300-contrast');
+    text-decoration: none;
+    &.active,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
