@@ -4,9 +4,7 @@ import {Observable} from "rxjs";
 import {Driver} from "../../data-models/driver";
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 
 export class DriversService {
   constructor(private  http: HttpClient) {}

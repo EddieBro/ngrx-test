@@ -23,6 +23,14 @@
     <mat-label>Driver status:</mat-label>
     <mat-checkbox color="primary" formControlName="active">Active</mat-checkbox>
   </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Vehicle Registration Number</mat-label>
+    <mat-select formControlName="vehicleId" required>
+      <mat-option *ngFor="let vehicle of vehicles$ | async" [value]="vehicle.id">
+        {{vehicle.registrationNumber}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
   <div class="btn-block">
     <button mat-raised-button color="primary" type="submit">Save</button>
     <button mat-raised-button color="accent" type="button" (click)="close()">Close</button>

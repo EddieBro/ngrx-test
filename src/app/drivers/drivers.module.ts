@@ -16,6 +16,9 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {DriversService} from "./services/drivers.service";
+import {VehiclesModule} from "../vehicles/vehicles.module";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -36,7 +39,12 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCheckboxModule
+    VehiclesModule,
+    MatCheckboxModule,
+    MatSelectModule
+  ],
+  providers: [
+    DriversService
   ]
 })
 export class DriversModule { }

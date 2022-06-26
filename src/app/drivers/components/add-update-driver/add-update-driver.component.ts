@@ -1,12 +1,15 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {AppState} from "../../../reducers";
-import {Store} from "@ngrx/store";
+import {select, Store} from "@ngrx/store";
 import {addDriver, editDriver} from "../../store/drivers.actions";
 import {Driver} from "../../../data-models/driver";
 import * as uuid from 'uuid';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Update} from "@ngrx/entity";
+import {Observable} from "rxjs";
+import {Vehicle} from "../../../data-models/vehicle";
+import {getAllVehicles} from "../../../vehicles/store/vehicles.selectors";
 
 @Component({
   selector: 'app-add-update-driver',
@@ -14,7 +17,6 @@ import {Update} from "@ngrx/entity";
   styleUrls: ['./add-update-driver.component.scss']
 })
 export class AddUpdateDriverComponent implements OnInit {
-
   constructor(
     private fb: FormBuilder,
     private store: Store<AppState>,
@@ -22,13 +24,15 @@ export class AddUpdateDriverComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public driver: Driver,
   ) { }
 
+
+  vehicles$: Observable<Vehicle[]> = this.store.pipe(select(getAllVehicles));
   readonly fg = this.fb.group( {
     name: ['', [Validators.required]],
     surname: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     birthDate: ['', [Validators.required]],
     active: [true, [Validators.required]],
-    // vehicleId: [null, [Validators.required]]
+    vehicleId: ['', [Validators.required]]
   })
 
   ngOnInit(): void {
@@ -39,6 +43,7 @@ export class AddUpdateDriverComponent implements OnInit {
         email: this.driver.email,
         birthDate: this.driver.birthDate,
         active: this.driver.active,
+        vehicleId: this.driver.vehicleId
       })
     }
     this.fg.valueChanges.subscribe(data => {
@@ -55,6 +60,7 @@ export class AddUpdateDriverComponent implements OnInit {
     const email = this.fg.get('email')?.value!;
     const birthDate = this.fg.get('birthDate')?.value!;
     const active = this.fg.get('active')?.value!;
+    const vehicleId = this.fg.get('vehicleId')?.value!;
     if (this.driver) {
       const update: Update<Driver> = {
         id: this.driver.id,
@@ -63,10 +69,12 @@ export class AddUpdateDriverComponent implements OnInit {
           surname,
           email,
           birthDate,
-          active
+          active,
+          vehicleId
         }
       }
       this.store.dispatch(editDriver({update}))
+      this.matDialogRef.close();
     } else {
       const payload: Driver = {
         id: uuid.v4(),
@@ -75,13 +83,14 @@ export class AddUpdateDriverComponent implements OnInit {
         email,
         birthDate,
         active,
-        vehicleId: '1'
+        vehicleId
       }
       if (this.fg.valid) {
         this.store.dispatch(addDriver({payload}))
+        this.matDialogRef.close();
       }
     }
-    this.matDialogRef.close();
+
   }
 
 }

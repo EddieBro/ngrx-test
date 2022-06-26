@@ -2,12 +2,14 @@
   <div class="top-block">
     <button mat-raised-button color="primary" (click)="openDialog()">Add driver</button>
   </div>
+<!--  {{preparedDrivers$ | async | json}}-->
   <div class="cards-list">
-    <mat-card class="driver-card" *ngFor="let driver of drivers$ | async; trackBy: trackById">
+    <mat-card class="driver-card" *ngFor="let driver of preparedDrivers$ | async; trackBy: trackById">
       <mat-card-header>
         <mat-card-title>{{driver.name}} {{driver.surname}}</mat-card-title>
         <mat-card-subtitle>Birth Date: {{driver.birthDate | date: 'dd.MM.yyyy'}}</mat-card-subtitle>
         <mat-card-subtitle>email: <a href="mailto:{{driver.email}}">{{driver.email}}</a></mat-card-subtitle>
+        <mat-card-subtitle>Vehicle number: {{driver.registrationNumber ? driver.registrationNumber : 'Empty'}}</mat-card-subtitle>
         <mat-card-title><div class="status-block" [ngClass]="{'active' : driver.active, 'unactive': !driver.active}">
           {{driver.active ? 'Active' : 'Unactive'}}
         </div></mat-card-title>
