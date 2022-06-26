@@ -1,4 +1,4 @@
-<h2>Add new driver</h2>
+<h2>{{driver ? 'Edit driver' : 'Add new driver'}}</h2>
 <form [formGroup]="fg" (submit)="submit()">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Driver name</mat-label>

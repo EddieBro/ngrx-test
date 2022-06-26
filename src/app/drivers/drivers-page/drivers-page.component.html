@@ -2,7 +2,6 @@
   <div class="top-block">
     <button mat-raised-button color="primary" (click)="openDialog()">Add driver</button>
   </div>
-<!--  {{preparedDrivers$ | async | json}}-->
   <div class="cards-list">
     <mat-card class="driver-card" *ngFor="let driver of preparedDrivers$ | async; trackBy: trackById">
       <mat-card-header>
@@ -24,5 +23,4 @@
       </mat-card-content>
     </mat-card>
   </div>
-
 </div>

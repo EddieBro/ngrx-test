@@ -16,6 +16,7 @@ import {getAllVehicles} from "../../../vehicles/store/vehicles.selectors";
   templateUrl: './add-update-driver.component.html',
   styleUrls: ['./add-update-driver.component.scss']
 })
+
 export class AddUpdateDriverComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
@@ -24,8 +25,8 @@ export class AddUpdateDriverComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public driver: Driver,
   ) { }
 
-
   vehicles$: Observable<Vehicle[]> = this.store.pipe(select(getAllVehicles));
+
   readonly fg = this.fb.group( {
     name: ['', [Validators.required]],
     surname: ['', [Validators.required]],
@@ -46,9 +47,6 @@ export class AddUpdateDriverComponent implements OnInit {
         vehicleId: this.driver.vehicleId
       })
     }
-    this.fg.valueChanges.subscribe(data => {
-      console.log(data, 'eto form data');
-    })
   }
   close () {
     this.matDialogRef.close();
