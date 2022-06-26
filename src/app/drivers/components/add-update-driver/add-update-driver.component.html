@@ -1,4 +1,5 @@
-<form [formGroup]="fg" (ngSubmit)="submit()">
+<h2>Add new driver</h2>
+<form [formGroup]="fg" (submit)="submit()">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Driver name</mat-label>
     <input matInput placeholder="John " value="" formControlName="name">
@@ -18,11 +19,12 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-  <div>
+  <div class="mat-form-field">
     <mat-label>Driver status:</mat-label>
-    <mat-checkbox formControlName="active">Active</mat-checkbox>
+    <mat-checkbox color="primary" formControlName="active">Active</mat-checkbox>
   </div>
-  <div>
+  <div class="btn-block">
     <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="accent" type="button" (click)="close()">Close</button>
   </div>
 </form>

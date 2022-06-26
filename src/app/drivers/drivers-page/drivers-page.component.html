@@ -1,5 +1,7 @@
 <div class="wrap">
-  <app-add-update-driver></app-add-update-driver>
+  <div class="top-block">
+    <button mat-raised-button color="primary" (click)="openDialog()">Add driver</button>
+  </div>
   <div class="cards-list">
     <mat-card class="driver-card" *ngFor="let driver of drivers$ | async; trackBy: trackById">
       <mat-card-header>
@@ -12,7 +14,7 @@
       </mat-card-header>
       <mat-card-content>
         <button mat-mini-fab color="primary" aria-label="Delete Driver">
-          <mat-icon>edit</mat-icon>
+          <mat-icon (click)="openDialog(driver)">edit</mat-icon>
         </button>
         <button mat-mini-fab color="warn" aria-label="Delete Driver" (click)="deleteDriver(driver.id)">
           <mat-icon>delete</mat-icon>

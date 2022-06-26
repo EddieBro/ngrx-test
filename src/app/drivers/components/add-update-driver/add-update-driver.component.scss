@@ -1,4 +1,19 @@
+:host {
+  width: 960px;
+}
+
 form {
   display: flex;
   flex-flow: column nowrap;
+}
+
+.mat-form-field {
+  margin-bottom: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.btn-block {
+  display: flex;
+  justify-content: space-between;
 }

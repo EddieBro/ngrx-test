@@ -12,6 +12,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import {HttpClientModule} from "@angular/common/http";
+import {MatDialogModule} from "@angular/material/dialog";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -26,6 +30,11 @@ import {HttpClientModule} from "@angular/common/http";
     StoreModule.forRoot({}),
     MatMenuModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([])
   ],

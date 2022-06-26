@@ -1,13 +1,12 @@
 {
   "drivers": [
     {
-      "id": "2017c858-1bce-4a7a-9860-c00c779f700b",
       "name": "Max",
       "surname": "Mustermann",
       "email": "m.mustermann@spedition.de",
       "birthDate": "1970-04-23T00:00:00.000Z",
       "active": true,
-      "vehicleId": "ae6be231-dc98-4886-a0b0-106d840a1d75"
+      "id": "2017c858-1bce-4a7a-9860-c00c779f700b"
     },
     {
       "id": "cb4c4a90-d40a-41f2-801c-e0b93c372b27",
