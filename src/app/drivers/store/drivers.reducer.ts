@@ -1,5 +1,5 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from "@ngrx/entity";
-import {Driver} from "../../data-models/driver";
+import {Driver} from "@models/driver";
 import {createReducer, on} from "@ngrx/store";
 import { driverActionsTypes, driversLoaded } from './drivers.actions';
 

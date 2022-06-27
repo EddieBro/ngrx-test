@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './shared/header/header.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -17,14 +17,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSelectModule} from "@angular/material/select";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     HttpClientModule,
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

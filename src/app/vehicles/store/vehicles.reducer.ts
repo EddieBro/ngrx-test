@@ -1,7 +1,7 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from "@ngrx/entity";
 import {createReducer, on} from "@ngrx/store";
 import {vehiclesActionsTypes} from './vehicles.actions';
-import {Vehicle} from "../../data-models/vehicle";
+import {Vehicle} from "@models/vehicle";
 
 
 export interface VehicleState extends EntityState<Vehicle> {

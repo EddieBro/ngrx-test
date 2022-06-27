@@ -3,12 +3,12 @@ import {FormBuilder, Validators} from "@angular/forms";
 import {AppState} from "../../../reducers";
 import {select, Store} from "@ngrx/store";
 import {addDriver, editDriver} from "../../store/drivers.actions";
-import {Driver} from "../../../data-models/driver";
+import {Driver} from "@models/driver";
 import * as uuid from 'uuid';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Update} from "@ngrx/entity";
 import {Observable} from "rxjs";
-import {Vehicle} from "../../../data-models/vehicle";
+import {Vehicle} from "@models/vehicle";
 import {getAllVehicles} from "../../../vehicles/store/vehicles.selectors";
 
 @Component({

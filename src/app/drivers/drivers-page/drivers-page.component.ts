@@ -1,13 +1,13 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {combineLatest, map, Observable} from "rxjs";
-import {Driver} from "../../data-models/driver";
+import {Driver} from "@models/driver";
 import {select, Store} from "@ngrx/store";
 import {driverActionsTypes, loadDrivers} from "../store/drivers.actions";
 import {getAllDrivers} from "../store/drivers.selectors";
 import {AppState} from "../../reducers";
 import {MatDialog} from "@angular/material/dialog";
 import {AddUpdateDriverComponent} from "../components/add-update-driver/add-update-driver.component";
-import {Vehicle} from "../../data-models/vehicle";
+import {Vehicle} from "@models/vehicle";
 import {getAllVehicles} from "../../vehicles/store/vehicles.selectors";
 import {loadVehicles} from "../../vehicles/store/vehicles.actions";
 

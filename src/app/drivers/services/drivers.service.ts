@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Driver} from "../../data-models/driver";
+import {Driver} from "@models/driver";
 
 
 @Injectable()

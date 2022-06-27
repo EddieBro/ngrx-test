@@ -1,5 +1,5 @@
 import {createAction, props} from "@ngrx/store";
-import {Vehicle} from "../../data-models/vehicle";
+import {Vehicle} from "@models/vehicle";
 
 export enum VehiclesActionTypes {
   LoadVehicles = '[Vehicles] Load Vehicles',

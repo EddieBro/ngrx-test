@@ -1,5 +1,5 @@
 import {createAction, props} from "@ngrx/store";
-import {Driver} from "../../data-models/driver";
+import {Driver} from "@models/driver";
 import {Update} from '@ngrx/entity';
 
 export enum DriversActionTypes {
