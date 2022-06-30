@@ -11,7 +11,7 @@ import {Vehicle} from "@models/vehicle";
 import {getAllVehicles} from "../../vehicles/store/vehicles.selectors";
 import {loadVehicles} from "../../vehicles/store/vehicles.actions";
 
-interface DriversPreparedData extends Driver {
+export interface DriversPreparedData extends Driver {
   registrationNumber: string;
 }
 
@@ -45,8 +45,6 @@ export class DriversPageComponent implements OnInit {
     this.store.dispatch(loadDrivers());
     this.store.dispatch(loadVehicles());
   }
-
-  readonly trackById = (_: number, {id}: Driver) => id;
 
   openDialog(driver?: Driver) {
     this.dialog.open(AddUpdateDriverComponent, {
