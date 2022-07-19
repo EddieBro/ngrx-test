@@ -3,13 +3,11 @@
     <button mat-raised-button color="primary" (click)="openDialog()">Add driver</button>
   </div>
   <div class="cards-list">
-    <ng-container *ngIf="preparedDrivers$ | async as drivers">
-      <app-driver-card
-        *ngFor="let driver of drivers; trackBy: trackById"
-        [driver]="driver"
-        (openDialog)="openDialog($event)"
-        (deleteDriver)="deleteDriver($event)"
-      ></app-driver-card>
-    </ng-container>
+    <app-driver-card
+      *ngFor="let driver of preparedDrivers$ | async; trackBy: trackById"
+      [driver]="driver"
+      (openDialog)="openDialog($event)"
+      (deleteDriver)="deleteDriver($event)"
+    ></app-driver-card>
   </div>
 </div>
