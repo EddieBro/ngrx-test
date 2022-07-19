@@ -19,12 +19,14 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {DriversService} from "./services/drivers.service";
 import {VehiclesModule} from "../vehicles/vehicles.module";
 import {MatSelectModule} from "@angular/material/select";
+import { DriverCardComponent } from './components/driver-card/driver-card.component';
 
 
 @NgModule({
   declarations: [
     DriversPageComponent,
-    AddUpdateDriverComponent
+    AddUpdateDriverComponent,
+    DriverCardComponent
   ],
   imports: [
     CommonModule,

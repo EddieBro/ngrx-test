@@ -22,7 +22,7 @@ selector tag removed)
  
 ### Day two (25.06)
 1) Remembering how to work with ngrx, added counter (from ngrx.io site, not used in further)
-Figuring out how to use enities (we not use it on my prev work, but it looks like less repeatable code)
+Figuring out how to use entities (we not use it on my prev work, but it looks like less repeatable code)
 2) Rename users module to drivers module 
 3) Added some crud things 
 

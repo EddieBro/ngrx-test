@@ -52,6 +52,8 @@ export class DriversPageComponent implements OnInit {
     });
   }
 
+  readonly trackById = (_: number, {id}: Driver) => id;
+
   deleteDriver(id: string) {
     this.store.dispatch(driverActionsTypes.deleteDriver({id}));
   }

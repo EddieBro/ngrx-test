@@ -1,4 +1,4 @@
-<mat-card class="driver-card" *ngFor="let driver of drivers; trackBy: trackById">
+<mat-card class="driver-card">
   <mat-card-header>
     <mat-card-title>{{driver.name}} {{driver.surname}}</mat-card-title>
     <mat-card-subtitle>Birth Date: {{driver.birthDate | date: 'dd.MM.yyyy'}}</mat-card-subtitle>

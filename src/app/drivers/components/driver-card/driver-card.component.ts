@@ -8,11 +8,11 @@ import {DriversPreparedData} from "../../drivers-page/drivers-page.component";
   styleUrls: ['./driver-card.component.scss']
 })
 export class DriverCardComponent {
-  @Input() drivers!: DriversPreparedData[];
+  @Input() driver!: DriversPreparedData;
   @Output() openDialog = new EventEmitter<Driver>();
   @Output() deleteDriver = new EventEmitter<string>();
 
   constructor() { }
 
-  readonly trackById = (_: number, {id}: Driver) => id;
+
 }
