@@ -17,10 +17,18 @@
 
 mat-card-subtitle {
   display: flex;
+  a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-mat-card-header ::ng-deep .mat-card-header-text {
-  margin: 0;
+.mat-card-header {
+  width: 100%;
+  &::ng-deep .mat-card-header-text {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 button {

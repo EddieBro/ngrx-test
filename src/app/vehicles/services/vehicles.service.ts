@@ -15,7 +15,7 @@ export class VehiclesService {
     return this.http.post<Vehicle>('http://localhost:3000/vehicles', driver);
   }
 
-  updateVehicle(id: string | number, changes: Partial<Vehicle>): Observable<any> {
+  updateVehicle(id: string | number, changes: Partial<Vehicle>): Observable<Partial<Vehicle>> {
     return this.http.put(`http://localhost:3000/vehicles/${id}`, changes);
   }
 

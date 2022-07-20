@@ -48,7 +48,8 @@ export class DriversPageComponent implements OnInit {
 
   openDialog(driver?: Driver) {
     this.dialog.open(AddUpdateDriverComponent, {
-      data: driver
+      data: driver,
+      panelClass: 'modal-add-driver'
     });
   }
 
