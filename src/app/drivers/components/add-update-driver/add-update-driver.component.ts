@@ -11,6 +11,16 @@ import {Observable} from "rxjs";
 import {Vehicle} from "@models/vehicle";
 import {getAllVehicles} from "../../../vehicles/store/vehicles.selectors";
 
+interface DriverForm {
+  id: string,
+  name: string,
+  surname: string,
+  email: string
+  birthDate: string,
+  active: boolean,
+  vehicleId: string
+}
+
 @Component({
   selector: 'app-add-update-driver',
   templateUrl: './add-update-driver.component.html',
@@ -53,35 +63,18 @@ export class AddUpdateDriverComponent implements OnInit {
   }
 
   submit() {
-    const name = this.fg.get('name')?.value!;
-    const surname = this.fg.get('surname')?.value!;
-    const email = this.fg.get('email')?.value!;
-    const birthDate = this.fg.get('birthDate')?.value!;
-    const active = this.fg.get('active')?.value!;
-    const vehicleId = this.fg.get('vehicleId')?.value!;
-    if (this.driver) {
+    const data = this.fg.value as DriverForm;
+    if (this.driver && this.fg.value) {
       const update: Update<Driver> = {
         id: this.driver.id,
-        changes: {
-          name,
-          surname,
-          email,
-          birthDate,
-          active,
-          vehicleId
-        }
+        changes: data
       }
       this.store.dispatch(editDriver({update}))
       this.matDialogRef.close();
     } else {
       const payload: Driver = {
-        id: uuid.v4(),
-        name,
-        surname,
-        email,
-        birthDate,
-        active,
-        vehicleId
+        ...data,
+        id: uuid.v4()
       }
       if (this.fg.valid) {
         this.store.dispatch(addDriver({payload}))
