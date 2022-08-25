@@ -25,6 +25,7 @@
     "@ngrx/entity": "^14.0.0",
     "@ngrx/store": "^14.0.0",
     "@ngrx/store-devtools": "^14.0.0",
+    "@nrwl/angular": "^14.5.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2",
